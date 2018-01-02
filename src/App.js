@@ -37,7 +37,7 @@ class App extends Component {
       <div>
         <Responsive minWidth={425}>
           <Grid>
-            <Grid.Row style={{ height: "100vh" }}>
+            <Grid.Row style={{ height: "95vh" }}>
               <Grid.Column textAlign="center" verticalAlign="middle" width={3}>
                 <MenuDesktop />
               </Grid.Column>
@@ -47,18 +47,23 @@ class App extends Component {
                   <Route path="/about" component={About} />
                   <Route path="/skills" component={Skills} />
                   <Route path="/projects" component={Projects} />
-                  <Route path="/contact" component={Contact} />
+                  {/* <Route path="/contact" component={Contact} /> */}
                 </Switch>
               </Grid.Column>
             </Grid.Row>
+            <Grid.Row style={{ height: "5vh" }}>
+            <Grid.Column width={13}>
+              <Footer />
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
-          <Footer />
+          
         </Responsive>
         <Responsive maxWidth={424}>
           <MenuMobile />
-          <Grid>
-            <Grid.Row textAlign="center">
-              <Grid.Column textAlign="left" verticalAlign="middle" width={16}>
+          <Grid textAlign="center" style={{ height: "95vh" }}>
+            <Grid.Row >
+              <Grid.Column textAlign="left" verticalAlign="top" width={16}>
                 <br />
                 <Switch>
                   <Route exact path="/" component={Home} />
@@ -69,8 +74,14 @@ class App extends Component {
                 </Switch>
               </Grid.Column>
             </Grid.Row>
+            </Grid>
+            <Grid style={{ height: "5vh" }}>
+            <Grid.Row >
+            <Grid.Column width={13}>
+              <Footer />
+              </Grid.Column>
+            </Grid.Row>
           </Grid>
-          <Footer />
         </Responsive>
       </div>
     );
